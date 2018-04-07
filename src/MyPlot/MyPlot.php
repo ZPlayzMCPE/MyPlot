@@ -30,7 +30,6 @@ use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use PocketMoney\PocketMoney;
-use spoondetector\SpoonDetector;
 
 class MyPlot extends PluginBase
 {
@@ -547,10 +546,6 @@ class MyPlot extends PluginBase
 	}
 
 	public function onEnable() : void {
-		SpoonDetector::printSpoon($this, "spoon.txt");
-		if($this->isDisabled()) {
-			return;
-		}
 		$this->getLogger()->debug(TF::BOLD . "Loading economy settings");
 		// Initialize EconomyProvider
 		if($this->getConfig()->get("UseEconomy", false) === true) {
